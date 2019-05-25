@@ -52,7 +52,7 @@ function browserify(entry_point_file_path, dst_file_path, watch) {
         if (!!watch) {
             yield browserify(entry_point_file_path, dst_file_path);
         }
-        const pr = fork(path.join(scriptLib.find_module_path(!!watch ? "watchify" : "browserify", path.join(exports.module_dir_path, "..")), "bin", "cmd"), [
+        const pr = fork(path.join(scriptLib.find_module_path(!!watch ? "watchify" : "browserify", path.join(exports.module_dir_path, "..", "..")), "bin", "cmd"), [
             "-e", path.resolve(entry_point_file_path),
             "-t", "html2js-browserify",
             "-t", "lessify",
@@ -71,7 +71,7 @@ function minify(file_path, watch) {
         if (!!watch) {
             yield minify(file_path);
         }
-        const run = () => fork(path.join(scriptLib.find_module_path("uglify-js", path.join(exports.module_dir_path, "..")), "bin", "uglifyjs"), [
+        const run = () => fork(path.join(scriptLib.find_module_path("uglify-js", path.join(exports.module_dir_path, "..", "..")), "bin", "uglifyjs"), [
             file_path,
             "-o",
             path.join(path.dirname(file_path), `${path.basename(file_path, ".js")}.min.js`)

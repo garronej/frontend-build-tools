@@ -92,7 +92,7 @@ export async function browserify(
         path.join(
             scriptLib.find_module_path(
                 !!watch ? "watchify" : "browserify",
-                path.join(module_dir_path, "..")
+                path.join(module_dir_path, "..", "..")
             ),
             "bin",
             "cmd"
@@ -128,7 +128,7 @@ async function minify(
         path.join(
             scriptLib.find_module_path(
                 "uglify-js",
-                path.join(module_dir_path, "..")
+                path.join(module_dir_path, "..", "..")
             ),
             "bin",
             "uglifyjs"
