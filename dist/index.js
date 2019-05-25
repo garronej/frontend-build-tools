@@ -11,7 +11,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const path = require("path");
 const child_process = require("child_process");
 const fs_watch = require("node-watch");
-exports.module_dir_path = path.join(__dirname, "..", "..");
+const scriptLib = require("scripting-tools");
+exports.module_dir_path = path.join(__dirname, "..");
 const fork = (modulePath, args, options) => new Promise((resolve, reject) => {
     const childProcess = child_process.fork(modulePath, args, options);
     const onExit = () => childProcess.kill();
@@ -28,7 +29,7 @@ const fork = (modulePath, args, options) => new Promise((resolve, reject) => {
 });
 function tsc(tsconfig_path, watch) {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log("tsc");
+        console.log(`tsc ${path.basename(path.dirname(tsconfig_path))}`);
         if (!!watch) {
             yield tsc(tsconfig_path);
         }
@@ -47,11 +48,11 @@ exports.tsc = tsc;
 /** If lessify is required it must be in the page dev-dependencies.*/
 function browserify(entry_point_file_path, dst_file_path, watch) {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log("browserify");
+        console.log(`browserify ${entry_point_file_path} -> ${dst_file_path}`);
         if (!!watch) {
             yield browserify(entry_point_file_path, dst_file_path);
         }
-        const pr = fork(path.join(exports.module_dir_path, "node_modules", !!watch ? "watchify" : "browserify", "bin", "cmd"), [
+        const pr = fork(path.join(scriptLib.find_module_path(!!watch ? "watchify" : "browserify", path.join(exports.module_dir_path, "..")), "bin", "cmd"), [
             "-e", path.resolve(entry_point_file_path),
             "-t", "html2js-browserify",
             "-t", "lessify",
@@ -66,11 +67,11 @@ function browserify(entry_point_file_path, dst_file_path, watch) {
 exports.browserify = browserify;
 function minify(file_path, watch) {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log("minify");
+        console.log(`minify ${file_path}`);
         if (!!watch) {
             yield minify(file_path);
         }
-        const run = () => fork(path.join(exports.module_dir_path, "node_modules", "uglify-js", "bin", "uglifyjs"), [
+        const run = () => fork(path.join(scriptLib.find_module_path("uglify-js", path.join(exports.module_dir_path, "..")), "bin", "uglifyjs"), [
             file_path,
             "-o",
             path.join(path.dirname(file_path), `${path.basename(file_path, ".js")}.min.js`)

@@ -2,8 +2,11 @@
 import * as path from "path";
 import * as child_process from "child_process";
 import * as fs_watch from "node-watch";
+import * as scriptLib from "scripting-tools";
 
-export const module_dir_path = path.join(__dirname, "..", "..");
+
+export const module_dir_path = path.join(__dirname, "..");
+
 
 const fork = (modulePath: string, args: string[], options?: child_process.ForkOptions) =>
     new Promise<number>(
@@ -41,7 +44,7 @@ export async function tsc(
     watch?: undefined | "WATCH"
 ) {
 
-    console.log("tsc");
+    console.log(`tsc ${path.basename(path.dirname(tsconfig_path))}`);
 
     if (!!watch) {
         await tsc(tsconfig_path);
@@ -76,7 +79,7 @@ export async function browserify(
     watch?: undefined | "WATCH"
 ) {
 
-    console.log("browserify");
+    console.log(`browserify ${entry_point_file_path} -> ${dst_file_path}`);
 
     if (!!watch) {
         await browserify(
@@ -86,7 +89,14 @@ export async function browserify(
     }
 
     const pr = fork(
-        path.join(module_dir_path, "node_modules", !!watch ? "watchify" : "browserify", "bin", "cmd"),
+        path.join(
+            scriptLib.find_module_path(
+                !!watch ? "watchify" : "browserify",
+                path.join(module_dir_path, "..")
+            ),
+            "bin",
+            "cmd"
+        ),
         [
             "-e", path.resolve(entry_point_file_path),
             "-t", "html2js-browserify",
@@ -108,14 +118,21 @@ async function minify(
     watch?: undefined | "WATCH"
 ) {
 
-    console.log("minify");
+    console.log(`minify ${file_path}`);
 
     if (!!watch) {
         await minify(file_path);
     }
 
     const run = () => fork(
-        path.join(module_dir_path, "node_modules", "uglify-js", "bin", "uglifyjs"),
+        path.join(
+            scriptLib.find_module_path(
+                "uglify-js",
+                path.join(module_dir_path, "..")
+            ),
+            "bin",
+            "uglifyjs"
+        ),
         [
             file_path,
             "-o",
@@ -126,10 +143,9 @@ async function minify(
         ]
     );
 
-
     if (!!watch) {
 
-        fs_watch(file_path, ()=> run());
+        fs_watch(file_path, () => run());
 
     }
 
