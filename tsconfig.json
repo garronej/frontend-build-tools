@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es6",
+        "lib": [
+            "es6"
+        ],
+        "declaration": true,
+        "outDir": "./dist",
+        "strictNullChecks": true,
+        "sourceMap": false,
+        "newLine": "LF",
+        "noUnusedLocals": true,
+        "noUnusedParameters": false,
+        "strictPropertyInitialization": true,
+        "strictFunctionTypes": true,
+        "incremental": true
+    },
+    "include": [
+        "src/**/*"
+    ]
+}
