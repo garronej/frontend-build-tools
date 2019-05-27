@@ -222,29 +222,62 @@ export function buildTestHtmlPage(
 
         console.log(`Building page ${html_file_path}`);
 
+        const basename = path.basename(bundled_file_path);
+
         fs.writeFileSync(
             html_file_path,
             Buffer.from(
                 [
                     `<!DOCTYPE html>`,
                     `<html lang="en">`,
-                    `  <head>`,
-                    `    <meta charset="utf-8">`,
-                    `    <title>title</title>`,
                     ``,
-                    `    <script src="./${path.basename(bundled_file_path)}"></script>`,
-                    `  </head>`,
-                    `  <body>`,
-                    `    <h1>running ${bundled_file_path}.js (CTRL + MAJ + i)</h1>`,
-                    `  </body>`,
-                    `</html>`
+                    `<head>`,
+                    `    <meta charset="utf-8">`,
+                    `    <title>Test ${basename}</title>`,
+                    ``,
+                    `    <script src="./${basename}"></script>`,
+                    `    <script>`,
+                    ``,
+                    `        document.addEventListener("DOMContentLoaded", function (event) {`,
+                    ``,
+                    `            var start = Date.now();`,
+                    `            var span = document.getElementById("up");`,
+                    `            var interval = 100;`,
+                    `            var tolerance = Math.floor(interval * 1.1);`,
+                    `            var last = start;`,
+                    ``,
+                    `            setInterval(function () {`,
+                    ``,
+                    `                var now = Date.now();`,
+                    `                var elapsed = now - last;`,
+                    ``,
+                    `                if (elapsed > tolerance) {`,
+                    `                    console.log("UI tread blocked for ~" + (elapsed - interval).toString() + "ms");`,
+                    `                }`,
+                    ``,
+                    `                span.innerHTML = (now - start).toString();`,
+                    ``,
+                    `                last += elapsed;`,
+                    ``,
+                    `            }, interval);`,
+                    ``,
+                    `        });`,
+                    ``,
+                    `    </script>`,
+                    `</head>`,
+                    ``,
+                    `<body>`,
+                    `    <h4>running ${bundled_file_path}.js (CTRL + MAJ + i)</h4>`,
+                    `    <p> Started since: <span id="up"></span>ms</p>`,
+                    `</body>`,
+                    ``,
+                    `</html>`,
                 ].join("\n"),
                 "utf8"
             )
         );
 
     };
-
 
     if (!!watch) {
 
