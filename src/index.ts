@@ -160,7 +160,7 @@ export async function browserify(
 
 }
 
-async function minify(
+export async function minify(
     file_path: string,
     watch?: undefined | "WATCH"
 ) {

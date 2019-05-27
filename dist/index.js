@@ -113,6 +113,7 @@ function minify(file_path, watch) {
         }
     });
 }
+exports.minify = minify;
 function buildTestHtmlPage(bundled_file_path, watch) {
     const run = () => {
         const html_file_path = path.join(path.dirname(bundled_file_path), `${path.basename(bundled_file_path, ".js")}.html`);
