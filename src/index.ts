@@ -3,6 +3,7 @@ import * as path from "path";
 import * as child_process from "child_process";
 import * as fs_watch from "node-watch";
 import * as scriptLib from "scripting-tools";
+import * as fs from "fs";
 
 const module_dir_path = path.join(__dirname, "..");
 
@@ -74,10 +75,13 @@ export async function tsc(
     watch?: undefined | "WATCH"
 ) {
 
-    console.log(`tsc ${path.basename(path.dirname(tsconfig_path))}`);
 
     if (!!watch) {
         await tsc(tsconfig_path);
+    }else{
+
+        console.log(`tsc -p ${path.basename(path.dirname(tsconfig_path))}`);
+
     }
 
     const args: string[] = ["-p", tsconfig_path];
@@ -122,13 +126,16 @@ export async function browserify(
     watch?: undefined | "WATCH"
 ) {
 
-    console.log(`browserify ${entry_point_file_path} -> ${dst_file_path}`);
 
     if (!!watch) {
         await browserify(
             entry_point_file_path,
             dst_file_path
         );
+    }else{
+
+        console.log(`${entry_point_file_path} -> browserify -> ${dst_file_path}`);
+
     }
 
     const pr = fork(
@@ -158,27 +165,34 @@ async function minify(
     watch?: undefined | "WATCH"
 ) {
 
-    console.log(`minify ${file_path}`);
 
     if (!!watch) {
         await minify(file_path);
     }
 
-    const run = () => fork(
-        path.join(
-            find_module_path("uglify-js"),
-            "bin",
-            "uglifyjs"
-        ),
-        [
-            file_path,
-            "-o",
+    const run = () => {
+
+        const minified_file_path= path.join(
+                    path.dirname(file_path),
+                    `${path.basename(file_path, ".js")}.min.js`
+        );
+
+        console.log(`${file_path} -> minify -> ${minified_file_path}`);
+
+        fork(
             path.join(
-                path.dirname(file_path),
-                `${path.basename(file_path, ".js")}.min.js`
-            )
-        ]
-    );
+                find_module_path("uglify-js"),
+                "bin",
+                "uglifyjs"
+            ),
+            [
+                file_path,
+                "-o",
+                minified_file_path
+            ]
+        );
+
+    };
 
     if (!!watch) {
 
@@ -191,6 +205,54 @@ async function minify(
     if (!watch) {
         return pr;
     }
+
+}
+
+export function buildTestHtmlPage(
+    bundled_file_path: string,
+    watch?: undefined | "WATCH"
+) {
+
+    const run = () => {
+
+        const html_file_path = path.join(
+            path.dirname(bundled_file_path),
+            `${path.basename(bundled_file_path, ".js")}.html`
+        );
+
+        console.log(`Building page ${html_file_path}`);
+
+        fs.writeFileSync(
+            html_file_path,
+            Buffer.from(
+                [
+                    `<!DOCTYPE html>`,
+                    `<html lang="en">`,
+                    `  <head>`,
+                    `    <meta charset="utf-8">`,
+                    `    <title>title</title>`,
+                    ``,
+                    `    <script src="./${path.basename(bundled_file_path)}"></script>`,
+                    `  </head>`,
+                    `  <body>`,
+                    `    <h1>running ${bundled_file_path}.js (CTRL + MAJ + i)</h1>`,
+                    `  </body>`,
+                    `</html>`
+                ].join("\n"),
+                "utf8"
+            )
+        );
+
+    };
+
+
+    if (!!watch) {
+
+        fs_watch(bundled_file_path, () => run());
+
+    }
+
+    run();
 
 }
 

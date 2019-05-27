@@ -12,6 +12,7 @@ const path = require("path");
 const child_process = require("child_process");
 const fs_watch = require("node-watch");
 const scriptLib = require("scripting-tools");
+const fs = require("fs");
 const module_dir_path = path.join(__dirname, "..");
 function find_module_path(module_name) {
     const host_module_dir_path = path.join(module_dir_path, "..", "..");
@@ -45,9 +46,11 @@ const fork = (modulePath, args, options) => new Promise((resolve, reject) => {
 });
 function tsc(tsconfig_path, watch) {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(`tsc ${path.basename(path.dirname(tsconfig_path))}`);
         if (!!watch) {
             yield tsc(tsconfig_path);
+        }
+        else {
+            console.log(`tsc -p ${path.basename(path.dirname(tsconfig_path))}`);
         }
         const args = ["-p", tsconfig_path];
         if (!!watch) {
@@ -68,9 +71,11 @@ exports.tsc = tsc;
 /** If lessify is required it must be in the page dev-dependencies.*/
 function browserify(entry_point_file_path, dst_file_path, watch) {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(`browserify ${entry_point_file_path} -> ${dst_file_path}`);
         if (!!watch) {
             yield browserify(entry_point_file_path, dst_file_path);
+        }
+        else {
+            console.log(`${entry_point_file_path} -> browserify -> ${dst_file_path}`);
         }
         const pr = fork(path.join(find_module_path(!!watch ? "watchify" : "browserify"), "bin", "cmd"), [
             "-e", path.resolve(entry_point_file_path),
@@ -87,15 +92,18 @@ function browserify(entry_point_file_path, dst_file_path, watch) {
 exports.browserify = browserify;
 function minify(file_path, watch) {
     return __awaiter(this, void 0, void 0, function* () {
-        console.log(`minify ${file_path}`);
         if (!!watch) {
             yield minify(file_path);
         }
-        const run = () => fork(path.join(find_module_path("uglify-js"), "bin", "uglifyjs"), [
-            file_path,
-            "-o",
-            path.join(path.dirname(file_path), `${path.basename(file_path, ".js")}.min.js`)
-        ]);
+        const run = () => {
+            const minified_file_path = path.join(path.dirname(file_path), `${path.basename(file_path, ".js")}.min.js`);
+            console.log(`${file_path} -> minify -> ${minified_file_path}`);
+            fork(path.join(find_module_path("uglify-js"), "bin", "uglifyjs"), [
+                file_path,
+                "-o",
+                minified_file_path
+            ]);
+        };
         if (!!watch) {
             fs_watch(file_path, () => run());
         }
@@ -105,6 +113,31 @@ function minify(file_path, watch) {
         }
     });
 }
+function buildTestHtmlPage(bundled_file_path, watch) {
+    const run = () => {
+        const html_file_path = path.join(path.dirname(bundled_file_path), `${path.basename(bundled_file_path, ".js")}.html`);
+        console.log(`Building page ${html_file_path}`);
+        fs.writeFileSync(html_file_path, Buffer.from([
+            `<!DOCTYPE html>`,
+            `<html lang="en">`,
+            `  <head>`,
+            `    <meta charset="utf-8">`,
+            `    <title>title</title>`,
+            ``,
+            `    <script src="./${path.basename(bundled_file_path)}"></script>`,
+            `  </head>`,
+            `  <body>`,
+            `    <h1>running ${bundled_file_path}.js (CTRL + MAJ + i)</h1>`,
+            `  </body>`,
+            `</html>`
+        ].join("\n"), "utf8"));
+    };
+    if (!!watch) {
+        fs_watch(bundled_file_path, () => run());
+    }
+    run();
+}
+exports.buildTestHtmlPage = buildTestHtmlPage;
 function tsc_browserify_minify(tsconfig_path, entry_point_file_path, out_file_path, watch) {
     return __awaiter(this, void 0, void 0, function* () {
         yield tsc(tsconfig_path, watch);
