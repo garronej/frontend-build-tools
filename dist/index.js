@@ -155,7 +155,7 @@ function buildTestHtmlPage(bundled_file_path, watch) {
             `</head>`,
             ``,
             `<body>`,
-            `    <h4>running ${bundled_file_path}.js (CTRL + MAJ + i)</h4>`,
+            `    <h4>Running ${bundled_file_path} (CTRL + MAJ + i)</h4>`,
             `</body>`,
             ``,
             `</html>`,
