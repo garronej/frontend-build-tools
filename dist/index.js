@@ -49,12 +49,16 @@ function tsc(tsconfig_path, watch) {
         if (!!watch) {
             yield tsc(tsconfig_path);
         }
-        const target_module_dir_path = path.dirname(tsconfig_path);
         const args = ["-p", tsconfig_path];
         if (!!watch) {
             args.push("-w");
         }
-        const pr = fork(path.join(find_module_path("typescript"), "bin", "tsc"), args, { "cwd": target_module_dir_path });
+        const pr = fork(path.join(find_module_path("typescript"), "bin", "tsc"), args, {
+            "cwd": path.join(path.dirname(tsconfig_path), (() => {
+                const { extends: tsconfig_extends } = require(tsconfig_path);
+                return tsconfig_extends !== undefined ? path.dirname(tsconfig_extends) : ".";
+            })())
+        });
         if (!watch) {
             return pr;
         }

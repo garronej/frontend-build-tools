@@ -80,8 +80,6 @@ export async function tsc(
         await tsc(tsconfig_path);
     }
 
-    const target_module_dir_path = path.dirname(tsconfig_path);
-
     const args: string[] = ["-p", tsconfig_path];
 
     if (!!watch) {
@@ -93,11 +91,22 @@ export async function tsc(
     const pr = fork(
         path.join(
             find_module_path("typescript"),
-            "bin", 
+            "bin",
             "tsc"
         ),
         args,
-        { "cwd": target_module_dir_path }
+        {
+            "cwd": path.join(
+                path.dirname(tsconfig_path),
+                (() => {
+
+                    const { extends: tsconfig_extends } = require(tsconfig_path);
+
+                    return tsconfig_extends !== undefined ? path.dirname(tsconfig_extends) : ".";
+
+                })()
+            )
+        }
     );
 
     if (!watch) {
@@ -124,7 +133,7 @@ export async function browserify(
 
     const pr = fork(
         path.join(
-            find_module_path( !!watch ? "watchify" : "browserify"),
+            find_module_path(!!watch ? "watchify" : "browserify"),
             "bin",
             "cmd"
         ),
