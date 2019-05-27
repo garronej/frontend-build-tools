@@ -4,8 +4,38 @@ import * as child_process from "child_process";
 import * as fs_watch from "node-watch";
 import * as scriptLib from "scripting-tools";
 
+const module_dir_path = path.join(__dirname, "..");
 
-export const module_dir_path = path.join(__dirname, "..");
+function find_module_path(module_name: string){
+
+    const host_module_dir_path = path.join(module_dir_path, "..", "..");
+
+    let dir_path = host_module_dir_path;
+
+    while (true) {
+
+        try {
+
+            return scriptLib.find_module_path(
+                module_name,
+                dir_path
+            );
+
+        } catch{ }
+
+        const parent_dir_path = path.join(dir_path, "..");
+
+        if (dir_path === parent_dir_path) {
+            break;
+        }
+
+        dir_path = parent_dir_path;
+
+    }
+
+    throw new Error(`Can't locate ${module_name}`);
+
+}
 
 
 const fork = (modulePath: string, args: string[], options?: child_process.ForkOptions) =>
@@ -61,7 +91,11 @@ export async function tsc(
     }
 
     const pr = fork(
-        path.join(target_module_dir_path, "node_modules", "typescript", "bin", "tsc"),
+        path.join(
+            find_module_path("typescript"),
+            "bin", 
+            "tsc"
+        ),
         args,
         { "cwd": target_module_dir_path }
     );
@@ -90,10 +124,7 @@ export async function browserify(
 
     const pr = fork(
         path.join(
-            scriptLib.find_module_path(
-                !!watch ? "watchify" : "browserify",
-                path.join(module_dir_path, "..", "..")
-            ),
+            find_module_path( !!watch ? "watchify" : "browserify"),
             "bin",
             "cmd"
         ),
@@ -126,10 +157,7 @@ async function minify(
 
     const run = () => fork(
         path.join(
-            scriptLib.find_module_path(
-                "uglify-js",
-                path.join(module_dir_path, "..", "..")
-            ),
+            find_module_path("uglify-js"),
             "bin",
             "uglifyjs"
         ),

@@ -12,7 +12,23 @@ const path = require("path");
 const child_process = require("child_process");
 const fs_watch = require("node-watch");
 const scriptLib = require("scripting-tools");
-exports.module_dir_path = path.join(__dirname, "..");
+const module_dir_path = path.join(__dirname, "..");
+function find_module_path(module_name) {
+    const host_module_dir_path = path.join(module_dir_path, "..", "..");
+    let dir_path = host_module_dir_path;
+    while (true) {
+        try {
+            return scriptLib.find_module_path(module_name, dir_path);
+        }
+        catch (_a) { }
+        const parent_dir_path = path.join(dir_path, "..");
+        if (dir_path === parent_dir_path) {
+            break;
+        }
+        dir_path = parent_dir_path;
+    }
+    throw new Error(`Can't locate ${module_name}`);
+}
 const fork = (modulePath, args, options) => new Promise((resolve, reject) => {
     const childProcess = child_process.fork(modulePath, args, options);
     const onExit = () => childProcess.kill();
@@ -38,7 +54,7 @@ function tsc(tsconfig_path, watch) {
         if (!!watch) {
             args.push("-w");
         }
-        const pr = fork(path.join(target_module_dir_path, "node_modules", "typescript", "bin", "tsc"), args, { "cwd": target_module_dir_path });
+        const pr = fork(path.join(find_module_path("typescript"), "bin", "tsc"), args, { "cwd": target_module_dir_path });
         if (!watch) {
             return pr;
         }
@@ -52,13 +68,13 @@ function browserify(entry_point_file_path, dst_file_path, watch) {
         if (!!watch) {
             yield browserify(entry_point_file_path, dst_file_path);
         }
-        const pr = fork(path.join(scriptLib.find_module_path(!!watch ? "watchify" : "browserify", path.join(exports.module_dir_path, "..", "..")), "bin", "cmd"), [
+        const pr = fork(path.join(find_module_path(!!watch ? "watchify" : "browserify"), "bin", "cmd"), [
             "-e", path.resolve(entry_point_file_path),
             "-t", "html2js-browserify",
             "-t", "lessify",
             "-t", "brfs",
             "-o", path.resolve(dst_file_path)
-        ], { "cwd": exports.module_dir_path });
+        ], { "cwd": module_dir_path });
         if (!watch) {
             return pr;
         }
@@ -71,7 +87,7 @@ function minify(file_path, watch) {
         if (!!watch) {
             yield minify(file_path);
         }
-        const run = () => fork(path.join(scriptLib.find_module_path("uglify-js", path.join(exports.module_dir_path, "..", "..")), "bin", "uglifyjs"), [
+        const run = () => fork(path.join(find_module_path("uglify-js"), "bin", "uglifyjs"), [
             file_path,
             "-o",
             path.join(path.dirname(file_path), `${path.basename(file_path, ".js")}.min.js`)
