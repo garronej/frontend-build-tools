@@ -126,17 +126,18 @@ export async function browserify(
     watch?: undefined | "WATCH"
 ) {
 
-
     if (!!watch) {
         await browserify(
             entry_point_file_path,
             dst_file_path
         );
-    }else{
+    } else {
 
         console.log(`${entry_point_file_path} -> browserify -> ${dst_file_path}`);
 
     }
+
+    dst_file_path = path.resolve(dst_file_path);
 
     const pr = fork(
         path.join(
@@ -149,16 +150,78 @@ export async function browserify(
             "-t", "html2js-browserify",
             "-t", "lessify",
             "-t", "brfs",
-            "-o", path.resolve(dst_file_path)
+            "-o", dst_file_path
         ],
         { "cwd": module_dir_path }
-    );
+    ).then(() => fs.writeFileSync(
+        dst_file_path,
+        Buffer.from([
+            `if( typeof window === "undefined" ){`,
+            `    var __node = {`,
+            `        "global": global,`,
+            `        "process": process,`,
+            `        "require": require,`,
+            `        "__dirname": __dirname,`,
+            `        "__filename": __filename`,
+            `    };`,
+            `}`,
+            fs.readFileSync(dst_file_path).toString("utf8")
+        ].join("\n"),
+            "utf8"
+        )
+    ));
+
 
     if (!watch) {
-        return pr;
+        await pr;
     }
 
+    await browserify.patchBundledFile(dst_file_path, watch);
+
 }
+
+export namespace browserify {
+
+    export async function patchBundledFile(
+        file_path: string,
+        watch?: undefined | "WATCH"
+    ) {
+
+        if (!!watch) {
+            await patchBundledFile(file_path);
+        }
+
+        const run = () => fs.writeFileSync(
+            file_path,
+            Buffer.from([
+                `if( typeof window === "undefined" && typeof __node === "undefined" ){`,
+                `    var __nodejs_backups = {`,
+                `        "global": global,`,
+                `        "process": process,`,
+                `        "require": require,`,
+                `        "__dirname": __dirname,`,
+                `        "__filename": __filename`,
+                `    };`,
+                `}`,
+                fs.readFileSync(file_path).toString("utf8")
+            ].join("\n"), "utf8")
+        );
+
+        if (!!watch) {
+
+            fs_watch(file_path, () => run());
+
+        }
+
+        const pr = run();
+
+        if (!watch) {
+            return pr;
+        }
+
+    }
+}
+
 
 export async function minify(
     file_path: string,
@@ -172,9 +235,9 @@ export async function minify(
 
     const run = () => {
 
-        const minified_file_path= path.join(
-                    path.dirname(file_path),
-                    `${path.basename(file_path, ".js")}.min.js`
+        const minified_file_path = path.join(
+            path.dirname(file_path),
+            `${path.basename(file_path, ".js")}.min.js`
         );
 
         console.log(`${file_path} -> minify -> ${minified_file_path}`);
