@@ -34,10 +34,10 @@ export type T__external_hook = {
 declare const __external_hook: T__external_hook | undefined;
 
 export function get(): T__external_hook {
-    if (typeof __external_hook !== "undefined") {
+    if (typeof __external_hook === "undefined") {
         throw new Error("External hook not defined");
     }
-    return __external_hook!
+    return __external_hook;
 }
 
 /** Assert running in node */

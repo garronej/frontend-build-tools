@@ -22,7 +22,7 @@ exports.sourceToPrepend = [
     "}"
 ].join("\n");
 function get() {
-    if (typeof __external_hook !== "undefined") {
+    if (typeof __external_hook === "undefined") {
         throw new Error("External hook not defined");
     }
     return __external_hook;
