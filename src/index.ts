@@ -4,6 +4,8 @@ import * as child_process from "child_process";
 import * as fs_watch from "node-watch";
 import * as scriptLib from "scripting-tools";
 import * as fs from "fs";
+import * as externalHook from "./externalHook";
+
 
 const module_dir_path = path.join(__dirname, "..");
 
@@ -160,33 +162,25 @@ export async function browserify(
         await pr;
     }
 
-    await browserify.patchBundledFile(dst_file_path, watch);
+    await browserify.setExternalHook(dst_file_path, watch);
 
 }
 
 export namespace browserify {
 
-    export async function patchBundledFile(
+    export async function setExternalHook(
         file_path: string,
         watch?: undefined | "WATCH"
     ) {
 
         if (!!watch) {
-            await patchBundledFile(file_path);
+            await setExternalHook(file_path);
         }
 
         const run = () => fs.writeFileSync(
             file_path,
             Buffer.from([
-                `if( typeof __nodejs_backups === "undefined" && typeof window === "undefined"){`,
-                `    var __nodejs_backups = {`,
-                `        "global": global,`,
-                `        "process": process,`,
-                `        "require": require,`,
-                `        "__dirname": __dirname,`,
-                `        "__filename": __filename`,
-                `    };`,
-                `}`,
+                externalHook.sourceToPrepend,
                 fs.readFileSync(file_path).toString("utf8")
             ].join("\n"), "utf8")
         );
@@ -205,7 +199,6 @@ export namespace browserify {
 
     }
 }
-
 
 export async function minify(
     file_path: string,
