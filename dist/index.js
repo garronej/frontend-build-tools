@@ -110,7 +110,7 @@ exports.browserify = browserify;
                 yield patchBundledFile(file_path);
             }
             const run = () => fs.writeFileSync(file_path, Buffer.from([
-                `if( typeof window === "undefined" && typeof __node === "undefined" ){`,
+                `if( typeof __nodejs_backups === "undefined" && typeof window === "undefined"){`,
                 `    var __nodejs_backups = {`,
                 `        "global": global,`,
                 `        "process": process,`,
