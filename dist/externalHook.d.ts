@@ -11,3 +11,5 @@ export declare type T__external_hook = {
 export declare function get(): T__external_hook;
 /** Assert running in node */
 export declare function get_node_built_in(name: "global" | "require"): any;
+export declare function isBrowser(): boolean;
+export declare function isMainThead(): boolean;

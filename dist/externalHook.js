@@ -5,7 +5,7 @@ exports.sourceToPrepend = [
     "",
     "    var __external_hook = {};",
     "",
-    "    var isBrowser = (typeof window === \"undefined\") || (typeof self !== \"undefined\" && !!self.postMessage);",
+    "    var isBrowser = (typeof window !== \"undefined\") || (typeof self !== \"undefined\" && !!self.postMessage);",
     "",
     "    if (!isBrowser) {",
     "",
@@ -42,3 +42,14 @@ function get_node_built_in(name) {
     }
 }
 exports.get_node_built_in = get_node_built_in;
+function isBrowser() {
+    return (typeof window !== "undefined" ||
+        (typeof self !== "undefined" && !!self.postMessage));
+}
+exports.isBrowser = isBrowser;
+function isMainThead() {
+    return isBrowser() ?
+        (typeof document !== "undefined") :
+        !get_node_built_in("global").process.send;
+}
+exports.isMainThead = isMainThead;

@@ -4,7 +4,7 @@ export const sourceToPrepend = [
     ``,
     `    var __external_hook = {};`,
     ``,
-    `    var isBrowser = (typeof window === "undefined") || (typeof self !== "undefined" && !!self.postMessage);`,
+    `    var isBrowser = (typeof window !== "undefined") || (typeof self !== "undefined" && !!self.postMessage);`,
     ``,
     `    if (!isBrowser) {`,
     ``,
@@ -60,5 +60,23 @@ export function get_node_built_in(
 
     }
 
+}
+
+declare const window: any;
+declare const self: any;
+declare const document: any;
+
+export function isBrowser(): boolean {
+        return (
+                typeof window !== "undefined" ||
+                (typeof self !== "undefined" && !!self.postMessage)
+        );
+}
+
+export function isMainThead(): boolean {
+        return isBrowser() ?
+                (typeof document !== "undefined") :
+                !get_node_built_in("global").process.send
+                ;
 }
 
