@@ -77,10 +77,6 @@
         "version": "28569d59e07d4378cb3d54979c4c60f9f06305c9bb6999ffe6cab758957adc46",
         "signature": "28569d59e07d4378cb3d54979c4c60f9f06305c9bb6999ffe6cab758957adc46"
       },
-      "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/src/externalhook.ts": {
-        "version": "70c6e17505fc3932c471d9bda7d2046cbb8cdb1746ce4e9d2e22532f2677297e",
-        "signature": "1744c25b6a6f54cfb0b279eac910157d96dd2f60c8fef626c6f6b8ad33eb3585"
-      },
       "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/inspector.d.ts": {
         "version": "312541b24bc94fa90916b9197028248f633554269363610207868e37103b7fee",
         "signature": "312541b24bc94fa90916b9197028248f633554269363610207868e37103b7fee"
@@ -102,8 +98,8 @@
         "signature": "53ef329ee8126e7faa239223730914ab9171d6232239a0a3776f749e24c37ac5"
       },
       "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/src/index.ts": {
-        "version": "ac9f871aac00b5b60efa8c954a0b04a1cc58d33f8d772dab018efe1dbd0c7c65",
-        "signature": "96373cafaace9abc8532ccc9b53cdc025595039feed0ce1605992e376e26eed2"
+        "version": "03a8d51f547e72dcc8e64555a33c9f9f81d092ee060cc9b9d82c6192f12ae6d3",
+        "signature": "c0cc8d8ac3838c6fa5c04c9e9ebde97738d693ba7835124d5e66da12ce0ca653"
       }
     },
     "options": {
@@ -203,10 +199,6 @@
         "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/base.d.ts",
         "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/src/externalhook.ts": [
-        "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
-      ],
       "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/inspector.d.ts": [
         "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/base.d.ts",
         "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
@@ -231,7 +223,6 @@
       "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/src/index.ts": [
         "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/base.d.ts",
         "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/scripting-tools/dist/lib/index.d.ts",
-        "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/src/externalhook.ts",
         "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
       ]
     },
@@ -359,8 +350,7 @@
       "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts",
       "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/scripting-tools/dist/lib/get_caller_file_path.d.ts",
       "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/scripting-tools/dist/lib/index.d.ts",
-      "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/src/index.ts",
-      "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/src/externalhook.ts"
+      "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/src/index.ts"
     ]
   },
   "version": "3.4.5"

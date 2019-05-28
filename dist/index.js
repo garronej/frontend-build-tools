@@ -40,7 +40,6 @@ var child_process = require("child_process");
 var fs_watch = require("node-watch");
 var scriptLib = require("scripting-tools");
 var fs = require("fs");
-var externalHook = require("./externalHook");
 var module_dir_path = path.join(__dirname, "..");
 function find_module_path(module_name) {
     var host_module_dir_path = path.join(module_dir_path, "..", "..");
@@ -137,46 +136,12 @@ function browserify(entry_point_file_path, dst_file_path, watch) {
                 case 4:
                     _a.sent();
                     _a.label = 5;
-                case 5: return [4 /*yield*/, browserify.setExternalHook(dst_file_path, watch)];
-                case 6:
-                    _a.sent();
-                    return [2 /*return*/];
+                case 5: return [2 /*return*/];
             }
         });
     });
 }
 exports.browserify = browserify;
-(function (browserify) {
-    function setExternalHook(file_path, watch) {
-        return __awaiter(this, void 0, void 0, function () {
-            var run, pr;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        if (!!!watch) return [3 /*break*/, 2];
-                        return [4 /*yield*/, setExternalHook(file_path)];
-                    case 1:
-                        _a.sent();
-                        _a.label = 2;
-                    case 2:
-                        run = function () { return fs.writeFileSync(file_path, Buffer.from([
-                            externalHook.sourceToPrepend,
-                            fs.readFileSync(file_path).toString("utf8")
-                        ].join("\n"), "utf8")); };
-                        if (!!watch) {
-                            fs_watch(file_path, function () { return run(); });
-                        }
-                        pr = run();
-                        if (!watch) {
-                            return [2 /*return*/, pr];
-                        }
-                        return [2 /*return*/];
-                }
-            });
-        });
-    }
-    browserify.setExternalHook = setExternalHook;
-})(browserify = exports.browserify || (exports.browserify = {}));
 function minify(file_path, watch) {
     return __awaiter(this, void 0, void 0, function () {
         var run, pr;

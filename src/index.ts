@@ -4,8 +4,6 @@ import * as child_process from "child_process";
 import * as fs_watch from "node-watch";
 import * as scriptLib from "scripting-tools";
 import * as fs from "fs";
-import * as externalHook from "./externalHook";
-
 
 const module_dir_path = path.join(__dirname, "..");
 
@@ -157,48 +155,12 @@ export async function browserify(
         { "cwd": module_dir_path }
     );
 
-
     if (!watch) {
         await pr;
     }
 
-    await browserify.setExternalHook(dst_file_path, watch);
-
 }
 
-export namespace browserify {
-
-    export async function setExternalHook(
-        file_path: string,
-        watch?: undefined | "WATCH"
-    ) {
-
-        if (!!watch) {
-            await setExternalHook(file_path);
-        }
-
-        const run = () => fs.writeFileSync(
-            file_path,
-            Buffer.from([
-                externalHook.sourceToPrepend,
-                fs.readFileSync(file_path).toString("utf8")
-            ].join("\n"), "utf8")
-        );
-
-        if (!!watch) {
-
-            fs_watch(file_path, () => run());
-
-        }
-
-        const pr = run();
-
-        if (!watch) {
-            return pr;
-        }
-
-    }
-}
 
 export async function minify(
     file_path: string,
