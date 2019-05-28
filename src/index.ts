@@ -153,23 +153,7 @@ export async function browserify(
             "-o", dst_file_path
         ],
         { "cwd": module_dir_path }
-    ).then(() => fs.writeFileSync(
-        dst_file_path,
-        Buffer.from([
-            `if( typeof window === "undefined" ){`,
-            `    var __node = {`,
-            `        "global": global,`,
-            `        "process": process,`,
-            `        "require": require,`,
-            `        "__dirname": __dirname,`,
-            `        "__filename": __filename`,
-            `    };`,
-            `}`,
-            fs.readFileSync(dst_file_path).toString("utf8")
-        ].join("\n"),
-            "utf8"
-        )
-    ));
+    );
 
 
     if (!watch) {

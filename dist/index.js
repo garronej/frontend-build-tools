@@ -84,18 +84,7 @@ function browserify(entry_point_file_path, dst_file_path, watch) {
             "-t", "lessify",
             "-t", "brfs",
             "-o", dst_file_path
-        ], { "cwd": module_dir_path }).then(() => fs.writeFileSync(dst_file_path, Buffer.from([
-            `if( typeof window === "undefined" ){`,
-            `    var __node = {`,
-            `        "global": global,`,
-            `        "process": process,`,
-            `        "require": require,`,
-            `        "__dirname": __dirname,`,
-            `        "__filename": __filename`,
-            `    };`,
-            `}`,
-            fs.readFileSync(dst_file_path).toString("utf8")
-        ].join("\n"), "utf8")));
+        ], { "cwd": module_dir_path });
         if (!watch) {
             yield pr;
         }
