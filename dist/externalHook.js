@@ -1,9 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.sourceToPrepend = [
+    "",
+    "var __external_hook;",
+    "",
     "if (typeof __external_hook === \"undefined\") {",
     "",
-    "    var __external_hook = {};",
+    "    __external_hook = {};",
     "",
     "    var isBrowser = (typeof window !== \"undefined\") || (typeof self !== \"undefined\" && !!self.postMessage);",
     "",
