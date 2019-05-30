@@ -30,6 +30,22 @@ function find_module_path(module_name) {
     }
     throw new Error(`Can't locate ${module_name}`);
 }
+exports.prepareForWatching = (() => {
+    let isStarted = false;
+    return () => {
+        if (isStarted) {
+            return;
+        }
+        isStarted = true;
+        process.setMaxListeners(70);
+        process.once("unhandledRejection", error => { throw error; });
+        console.log("Enter exit for graceful termination");
+        Object.defineProperty(require("repl").start({
+            "terminal": true,
+            "prompt": "> "
+        }).context, "exit", { "get": () => process.exit(0) });
+    };
+})();
 const fork = (modulePath, args, options) => new Promise((resolve, reject) => {
     const childProcess = child_process.fork(modulePath, args, options);
     const onExit = () => childProcess.kill();
@@ -47,6 +63,7 @@ const fork = (modulePath, args, options) => new Promise((resolve, reject) => {
 function tsc(tsconfig_path, watch) {
     return __awaiter(this, void 0, void 0, function* () {
         if (!!watch) {
+            exports.prepareForWatching();
             yield tsc(tsconfig_path);
         }
         else {
@@ -72,6 +89,7 @@ exports.tsc = tsc;
 function browserify(entry_point_file_path, dst_file_path, watch) {
     return __awaiter(this, void 0, void 0, function* () {
         if (!!watch) {
+            exports.prepareForWatching();
             yield browserify(entry_point_file_path, dst_file_path);
         }
         else {
@@ -86,7 +104,7 @@ function browserify(entry_point_file_path, dst_file_path, watch) {
             "-o", dst_file_path
         ], { "cwd": module_dir_path });
         if (!watch) {
-            yield pr;
+            return pr;
         }
     });
 }
@@ -94,6 +112,7 @@ exports.browserify = browserify;
 function minify(file_path, watch) {
     return __awaiter(this, void 0, void 0, function* () {
         if (!!watch) {
+            exports.prepareForWatching();
             yield minify(file_path);
         }
         const run = () => {
@@ -163,6 +182,7 @@ function buildTestHtmlPage(bundled_file_path, watch) {
         ].join("\n"), "utf8"));
     };
     if (!!watch) {
+        exports.prepareForWatching();
         fs_watch(bundled_file_path, () => run());
     }
     run();

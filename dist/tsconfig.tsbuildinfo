@@ -118,8 +118,8 @@
         "signature": "53ef329ee8126e7faa239223730914ab9171d6232239a0a3776f749e24c37ac5"
       },
       "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/src/index.ts": {
-        "version": "03a8d51f547e72dcc8e64555a33c9f9f81d092ee060cc9b9d82c6192f12ae6d3",
-        "signature": "c0cc8d8ac3838c6fa5c04c9e9ebde97738d693ba7835124d5e66da12ce0ca653"
+        "version": "2dc9bf2bf0a7846d18886ebe439bde8239329362aa9dadf48806e87bc0bdcfcd",
+        "signature": "8adfd6bf8b5d5133d391c7aba3ac802b0a5e45b819d17b1c3997bf00a7579382"
       }
     },
     "options": {
@@ -368,17 +368,17 @@
         "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/inspector.d.ts",
         "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/scripting-tools/dist/lib/index.d.ts": [
-        "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/scripting-tools/dist/lib/get_caller_file_path.d.ts",
-        "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts": [
+        "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/base.d.ts"
       ],
       "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/scripting-tools/dist/lib/get_caller_file_path.d.ts": [
         "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/base.d.ts",
         "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts": [
-        "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/base.d.ts"
+      "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/scripting-tools/dist/lib/index.d.ts": [
+        "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/base.d.ts",
+        "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/scripting-tools/dist/lib/get_caller_file_path.d.ts",
+        "c:/users/joseph/dropbox/shell/local-github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [

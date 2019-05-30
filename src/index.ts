@@ -38,6 +38,39 @@ function find_module_path(module_name: string){
 
 }
 
+export const prepareForWatching = (() => {
+
+    let isStarted = false;
+
+    return () => {
+
+        if (isStarted) {
+            return;
+        }
+
+        isStarted = true;
+
+        process.setMaxListeners(70)
+
+        process.once("unhandledRejection", error => { throw error; });
+
+        console.log("Enter exit for graceful termination");
+
+        Object.defineProperty(
+            require("repl").start({
+                "terminal": true,
+                "prompt": "> "
+            }).context,
+            "exit", { "get": () => process.exit(0) }
+        );
+
+    };
+
+
+})();
+
+
+
 
 const fork = (modulePath: string, args: string[], options?: child_process.ForkOptions) =>
     new Promise<number>(
@@ -75,10 +108,10 @@ export async function tsc(
     watch?: undefined | "WATCH"
 ) {
 
-
     if (!!watch) {
+        prepareForWatching();
         await tsc(tsconfig_path);
-    }else{
+    } else {
 
         console.log(`tsc -p ${path.basename(path.dirname(tsconfig_path))}`);
 
@@ -127,6 +160,7 @@ export async function browserify(
 ) {
 
     if (!!watch) {
+        prepareForWatching();
         await browserify(
             entry_point_file_path,
             dst_file_path
@@ -156,7 +190,7 @@ export async function browserify(
     );
 
     if (!watch) {
-        await pr;
+        return pr;
     }
 
 }
@@ -167,8 +201,8 @@ export async function minify(
     watch?: undefined | "WATCH"
 ) {
 
-
     if (!!watch) {
+        prepareForWatching();
         await minify(file_path);
     }
 
@@ -277,6 +311,8 @@ export function buildTestHtmlPage(
     };
 
     if (!!watch) {
+
+        prepareForWatching();
 
         fs_watch(bundled_file_path, () => run());
 
