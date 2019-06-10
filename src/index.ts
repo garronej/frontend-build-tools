@@ -7,11 +7,9 @@ import * as fs from "fs";
 
 const module_dir_path = path.join(__dirname, "..");
 
-function find_module_path(module_name: string){
+function find_module_path(module_name: string, module_dir_path: string){
 
-    const host_module_dir_path = path.join(module_dir_path, "..", "..");
-
-    let dir_path = host_module_dir_path;
+    let dir_path = module_dir_path;
 
     while (true) {
 
@@ -125,24 +123,26 @@ export async function tsc(
 
     }
 
+    const target_module_dir_path = path.join(
+        path.dirname(tsconfig_path),
+        (() => {
+
+            const { extends: tsconfig_extends } = require(tsconfig_path);
+
+            return tsconfig_extends !== undefined ? path.dirname(tsconfig_extends) : ".";
+
+        })()
+    );
+
     const pr = fork(
         path.join(
-            find_module_path("typescript"),
+            find_module_path("typescript", target_module_dir_path),
             "bin",
             "tsc"
         ),
         args,
         {
-            "cwd": path.join(
-                path.dirname(tsconfig_path),
-                (() => {
-
-                    const { extends: tsconfig_extends } = require(tsconfig_path);
-
-                    return tsconfig_extends !== undefined ? path.dirname(tsconfig_extends) : ".";
-
-                })()
-            )
+            "cwd": target_module_dir_path
         }
     );
 
@@ -175,7 +175,10 @@ export async function browserify(
 
     const pr = fork(
         path.join(
-            find_module_path(!!watch ? "watchify" : "browserify"),
+            find_module_path(
+                !!watch ? "watchify" : "browserify",
+                module_dir_path
+            ),
             "bin",
             "cmd"
         ),
@@ -217,7 +220,10 @@ export async function minify(
 
         fork(
             path.join(
-                find_module_path("uglify-js"),
+                find_module_path(
+                    "uglify-js",
+                    module_dir_path
+                ),
                 "bin",
                 "uglifyjs"
             ),

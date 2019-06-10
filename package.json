@@ -1,6 +1,6 @@
 {
   "name": "frontend-build-tools",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "...",
   "repository": {
     "type": "git",
@@ -26,6 +26,6 @@
   },
   "devDependencies": {
     "@types/node": "^8.9.1",
-    "typescript": "^3.0.1"
+    "typescript": "^3.5.1"
   }
 }
