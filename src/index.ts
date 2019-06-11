@@ -4,6 +4,7 @@ import * as child_process from "child_process";
 import * as fs_watch from "node-watch";
 import * as scriptLib from "scripting-tools";
 import * as fs from "fs";
+import * as crypto from "crypto";
 
 const module_dir_path = path.join(__dirname, "..");
 
@@ -70,15 +71,36 @@ export const prepareForWatching = (() => {
 
 
 
-const fork = (modulePath: string, args: string[], options?: child_process.ForkOptions) =>
+const fork = (
+    modulePath: string,
+    args: string[],
+    options?: child_process.ForkOptions,
+    onStdoutData?: (data: Buffer) => void
+) =>
     new Promise<number>(
         (resolve, reject) => {
+
+            if (!!onStdoutData) {
+                options = {
+                    ...(options || {}),
+                    "silent": true
+                };
+            }
 
             const childProcess = child_process.fork(
                 modulePath,
                 args,
                 options
             );
+
+            if (!!onStdoutData) {
+
+                childProcess.stdout.on(
+                    "data",
+                    (data: Buffer) => onStdoutData(data)
+                );
+
+            }
 
             const onExit = () => childProcess.kill();
 
@@ -249,6 +271,83 @@ export async function minify(
     }
 
 }
+
+export async function brfs(
+    file_path: string,
+    watch?: undefined | "WATCH"
+) {
+
+    if (!!watch) {
+        prepareForWatching();
+        await brfs(file_path);
+    }
+
+    const run = async () => {
+
+        if (
+            brfs.computeDigest(
+                fs.readFileSync(file_path)
+            ) === brfs.digest
+        ) {
+            return;
+        }
+
+        console.log(`${file_path} -> brfs -> self`);
+
+        const outFileData = await (async () => {
+
+            let str = "";
+
+            await fork(
+                path.join(
+                    find_module_path(
+                        "brfs",
+                        module_dir_path
+                    ),
+                    "bin",
+                    "cmd.js"
+                ),
+                [ file_path ],
+                undefined,
+                data => str += data.toString("utf8")
+            );
+
+            return Buffer.from(str, "utf8");
+
+        })();
+
+        brfs.digest = brfs.computeDigest(outFileData);
+
+        fs.writeFileSync(file_path, outFileData);
+
+    };
+
+    if (!!watch) {
+
+        fs_watch(file_path, () => run());
+
+    }
+
+    const pr = run();
+
+    if (!watch) {
+        return pr;
+    }
+
+}
+
+export namespace brfs {
+
+    export const computeDigest = buffer => crypto
+        .createHash("md5")
+        .update(buffer)
+        .digest("hex")
+        ;
+
+    export let digest = "";
+
+}
+
 
 export function buildTestHtmlPage(
     bundled_file_path: string,

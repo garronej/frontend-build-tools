@@ -13,6 +13,7 @@ const child_process = require("child_process");
 const fs_watch = require("node-watch");
 const scriptLib = require("scripting-tools");
 const fs = require("fs");
+const crypto = require("crypto");
 const module_dir_path = path.join(__dirname, "..");
 function find_module_path(module_name, module_dir_path) {
     let dir_path = module_dir_path;
@@ -45,8 +46,14 @@ exports.prepareForWatching = (() => {
         }).context, "exit", { "get": () => process.exit(0) });
     };
 })();
-const fork = (modulePath, args, options) => new Promise((resolve, reject) => {
+const fork = (modulePath, args, options, onStdoutData) => new Promise((resolve, reject) => {
+    if (!!onStdoutData) {
+        options = Object.assign({}, (options || {}), { "silent": true });
+    }
     const childProcess = child_process.fork(modulePath, args, options);
+    if (!!onStdoutData) {
+        childProcess.stdout.on("data", (data) => onStdoutData(data));
+    }
     const onExit = () => childProcess.kill();
     process.once("exit", onExit);
     childProcess.once("exit", code => {
@@ -134,6 +141,42 @@ function minify(file_path, watch) {
     });
 }
 exports.minify = minify;
+function brfs(file_path, watch) {
+    return __awaiter(this, void 0, void 0, function* () {
+        if (!!watch) {
+            exports.prepareForWatching();
+            yield brfs(file_path);
+        }
+        const run = () => __awaiter(this, void 0, void 0, function* () {
+            if (brfs.computeDigest(fs.readFileSync(file_path)) === brfs.digest) {
+                return;
+            }
+            console.log(`${file_path} -> brfs -> self`);
+            const outFileData = yield (() => __awaiter(this, void 0, void 0, function* () {
+                let str = "";
+                yield fork(path.join(find_module_path("brfs", module_dir_path), "bin", "cmd.js"), [file_path], undefined, data => str += data.toString("utf8"));
+                return Buffer.from(str, "utf8");
+            }))();
+            brfs.digest = brfs.computeDigest(outFileData);
+            fs.writeFileSync(file_path, outFileData);
+        });
+        if (!!watch) {
+            fs_watch(file_path, () => run());
+        }
+        const pr = run();
+        if (!watch) {
+            return pr;
+        }
+    });
+}
+exports.brfs = brfs;
+(function (brfs) {
+    brfs.computeDigest = buffer => crypto
+        .createHash("md5")
+        .update(buffer)
+        .digest("hex");
+    brfs.digest = "";
+})(brfs = exports.brfs || (exports.brfs = {}));
 function buildTestHtmlPage(bundled_file_path, watch) {
     const run = () => {
         const html_file_path = path.join(path.dirname(bundled_file_path), `${path.basename(bundled_file_path, ".js")}.html`);

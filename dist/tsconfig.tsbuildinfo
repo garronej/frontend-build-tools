@@ -118,8 +118,8 @@
         "signature": "53ef329ee8126e7faa239223730914ab9171d6232239a0a3776f749e24c37ac5"
       },
       "c:/users/joseph/dropbox/shell/pcloud_github/frontend-build-tools/src/index.ts": {
-        "version": "af8eb25172811e09742c8a933f7f373849f3cbc0465a73170893da595b1c8850",
-        "signature": "8adfd6bf8b5d5133d391c7aba3ac802b0a5e45b819d17b1c3997bf00a7579382"
+        "version": "88a9fab3237f2440555c80eb76b46b385171d1517de465b67af736832fdef255",
+        "signature": "06e94dce48ef1ff85d595276e98ccdd161fa8134d50bde77929f1f84eec99f27"
       }
     },
     "options": {
@@ -368,17 +368,17 @@
         "c:/users/joseph/dropbox/shell/pcloud_github/frontend-build-tools/node_modules/@types/node/inspector.d.ts",
         "c:/users/joseph/dropbox/shell/pcloud_github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "c:/users/joseph/dropbox/shell/pcloud_github/frontend-build-tools/node_modules/scripting-tools/dist/lib/index.d.ts": [
-        "c:/users/joseph/dropbox/shell/pcloud_github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "c:/users/joseph/dropbox/shell/pcloud_github/frontend-build-tools/node_modules/scripting-tools/dist/lib/get_caller_file_path.d.ts",
-        "c:/users/joseph/dropbox/shell/pcloud_github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "c:/users/joseph/dropbox/shell/pcloud_github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts": [
+        "c:/users/joseph/dropbox/shell/pcloud_github/frontend-build-tools/node_modules/@types/node/base.d.ts"
       ],
       "c:/users/joseph/dropbox/shell/pcloud_github/frontend-build-tools/node_modules/scripting-tools/dist/lib/get_caller_file_path.d.ts": [
         "c:/users/joseph/dropbox/shell/pcloud_github/frontend-build-tools/node_modules/@types/node/base.d.ts",
         "c:/users/joseph/dropbox/shell/pcloud_github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "c:/users/joseph/dropbox/shell/pcloud_github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts": [
-        "c:/users/joseph/dropbox/shell/pcloud_github/frontend-build-tools/node_modules/@types/node/base.d.ts"
+      "c:/users/joseph/dropbox/shell/pcloud_github/frontend-build-tools/node_modules/scripting-tools/dist/lib/index.d.ts": [
+        "c:/users/joseph/dropbox/shell/pcloud_github/frontend-build-tools/node_modules/@types/node/base.d.ts",
+        "c:/users/joseph/dropbox/shell/pcloud_github/frontend-build-tools/node_modules/scripting-tools/dist/lib/get_caller_file_path.d.ts",
+        "c:/users/joseph/dropbox/shell/pcloud_github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
