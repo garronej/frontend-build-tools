@@ -93,7 +93,7 @@ function tsc(tsconfig_path, watch) {
 }
 exports.tsc = tsc;
 /** If lessify is required it must be in the page dev-dependencies.*/
-function browserify(entry_point_file_path, dst_file_path, watch) {
+function browserify(entry_point_file_path, dst_file_path, extra_args = [], watch) {
     return __awaiter(this, void 0, void 0, function* () {
         if (!!watch) {
             exports.prepareForWatching();
@@ -104,6 +104,7 @@ function browserify(entry_point_file_path, dst_file_path, watch) {
         }
         dst_file_path = path.resolve(dst_file_path);
         const pr = fork(path.join(find_module_path(!!watch ? "watchify" : "browserify", module_dir_path), "bin", "cmd"), [
+            ...extra_args,
             "-e", path.resolve(entry_point_file_path),
             "-t", "html2js-browserify",
             "-t", "lessify",
@@ -231,11 +232,3 @@ function buildTestHtmlPage(bundled_file_path, watch) {
     run();
 }
 exports.buildTestHtmlPage = buildTestHtmlPage;
-function tsc_browserify_minify(tsconfig_path, entry_point_file_path, out_file_path, watch) {
-    return __awaiter(this, void 0, void 0, function* () {
-        yield tsc(tsconfig_path, watch);
-        yield browserify(entry_point_file_path, out_file_path, watch);
-        yield minify(out_file_path, watch);
-    });
-}
-exports.tsc_browserify_minify = tsc_browserify_minify;

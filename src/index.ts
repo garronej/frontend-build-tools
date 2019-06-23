@@ -178,6 +178,7 @@ export async function tsc(
 export async function browserify(
     entry_point_file_path: string,
     dst_file_path: string,
+    extra_args: string[] = [],
     watch?: undefined | "WATCH"
 ) {
 
@@ -205,6 +206,7 @@ export async function browserify(
             "cmd"
         ),
         [
+            ...extra_args,
             "-e", path.resolve(entry_point_file_path),
             "-t", "html2js-browserify",
             "-t", "lessify",
@@ -348,7 +350,6 @@ export namespace brfs {
 
 }
 
-
 export function buildTestHtmlPage(
     bundled_file_path: string,
     watch?: undefined | "WATCH"
@@ -426,29 +427,3 @@ export function buildTestHtmlPage(
     run();
 
 }
-
-export async function tsc_browserify_minify(
-    tsconfig_path: string,
-    entry_point_file_path: string,
-    out_file_path: string,
-    watch?: undefined | "WATCH"
-) {
-
-    await tsc(
-        tsconfig_path,
-        watch
-    );
-
-    await browserify(
-        entry_point_file_path,
-        out_file_path,
-        watch
-    );
-
-    await minify(
-        out_file_path,
-        watch
-    );
-
-}
-
