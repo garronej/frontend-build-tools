@@ -176,25 +176,27 @@ export async function tsc(
 
 /** If lessify is required it must be in the page dev-dependencies.*/
 export async function browserify(
-    entry_point_file_path: string,
-    dst_file_path: string,
+    input: ["--entry" | "--require", string],
+    output: ["--outfile", string],
     extra_args: string[] = [],
     watch?: undefined | "WATCH"
 ) {
 
+
     if (!!watch) {
         prepareForWatching();
         await browserify(
-            entry_point_file_path,
-            dst_file_path
+            input,
+            output,
+            extra_args
         );
     } else {
 
-        console.log(`${entry_point_file_path} -> browserify -> ${dst_file_path}`);
+        console.log(`${input[1]} -> browserify -> ${output[1]}`);
 
     }
 
-    dst_file_path = path.resolve(dst_file_path);
+    [ input, output ].map( io => io[1] = path.resolve(io[1]));
 
     const pr = fork(
         path.join(
@@ -207,11 +209,11 @@ export async function browserify(
         ),
         [
             ...extra_args,
-            "-e", path.resolve(entry_point_file_path),
+            ...input,
             "-t", "html2js-browserify",
             "-t", "lessify",
             "-t", "brfs",
-            "-o", dst_file_path
+            ...output
         ],
         { "cwd": module_dir_path }
     );

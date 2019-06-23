@@ -93,23 +93,23 @@ function tsc(tsconfig_path, watch) {
 }
 exports.tsc = tsc;
 /** If lessify is required it must be in the page dev-dependencies.*/
-function browserify(entry_point_file_path, dst_file_path, extra_args = [], watch) {
+function browserify(input, output, extra_args = [], watch) {
     return __awaiter(this, void 0, void 0, function* () {
         if (!!watch) {
             exports.prepareForWatching();
-            yield browserify(entry_point_file_path, dst_file_path);
+            yield browserify(input, output, extra_args);
         }
         else {
-            console.log(`${entry_point_file_path} -> browserify -> ${dst_file_path}`);
+            console.log(`${input[1]} -> browserify -> ${output[1]}`);
         }
-        dst_file_path = path.resolve(dst_file_path);
+        [input, output].map(io => io[1] = path.resolve(io[1]));
         const pr = fork(path.join(find_module_path(!!watch ? "watchify" : "browserify", module_dir_path), "bin", "cmd"), [
             ...extra_args,
-            "-e", path.resolve(entry_point_file_path),
+            ...input,
             "-t", "html2js-browserify",
             "-t", "lessify",
             "-t", "brfs",
-            "-o", dst_file_path
+            ...output
         ], { "cwd": module_dir_path });
         if (!watch) {
             return pr;
