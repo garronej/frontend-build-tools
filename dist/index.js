@@ -102,7 +102,8 @@ function browserify(input, output, extra_args = [], watch) {
         else {
             console.log(`${input[1]} -> browserify -> ${output[1]}`);
         }
-        [input, output].map(io => io[1] = path.resolve(io[1]));
+        input = [input[0], path.resolve(input[1])];
+        output = [output[0], path.resolve(output[1])];
         const pr = fork(path.join(find_module_path(!!watch ? "watchify" : "browserify", module_dir_path), "bin", "cmd"), [
             ...extra_args,
             ...input,

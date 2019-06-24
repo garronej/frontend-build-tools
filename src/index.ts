@@ -182,7 +182,6 @@ export async function browserify(
     watch?: undefined | "WATCH"
 ) {
 
-
     if (!!watch) {
         prepareForWatching();
         await browserify(
@@ -196,7 +195,8 @@ export async function browserify(
 
     }
 
-    [ input, output ].map( io => io[1] = path.resolve(io[1]));
+    input = [input[0], path.resolve(input[1])];
+    output = [output[0], path.resolve(output[1])];
 
     const pr = fork(
         path.join(
@@ -311,7 +311,7 @@ export async function brfs(
                     "bin",
                     "cmd.js"
                 ),
-                [ file_path ],
+                [file_path],
                 undefined,
                 data => str += data.toString("utf8")
             );
