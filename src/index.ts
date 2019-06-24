@@ -195,9 +195,6 @@ export async function browserify(
 
     }
 
-    input = [input[0], path.resolve(input[1])];
-    output = [output[0], path.resolve(output[1])];
-
     const pr = fork(
         path.join(
             find_module_path(
@@ -209,11 +206,11 @@ export async function browserify(
         ),
         [
             ...extra_args,
-            ...input,
+            ...[input[0], path.resolve(input[1])],
             "-t", "html2js-browserify",
             "-t", "lessify",
             "-t", "brfs",
-            ...output
+            ...[output[0], path.resolve(output[1])]
         ],
         { "cwd": module_dir_path }
     );

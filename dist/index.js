@@ -102,15 +102,13 @@ function browserify(input, output, extra_args = [], watch) {
         else {
             console.log(`${input[1]} -> browserify -> ${output[1]}`);
         }
-        input = [input[0], path.resolve(input[1])];
-        output = [output[0], path.resolve(output[1])];
         const pr = fork(path.join(find_module_path(!!watch ? "watchify" : "browserify", module_dir_path), "bin", "cmd"), [
             ...extra_args,
-            ...input,
+            ...[input[0], path.resolve(input[1])],
             "-t", "html2js-browserify",
             "-t", "lessify",
             "-t", "brfs",
-            ...output
+            ...[output[0], path.resolve(output[1])]
         ], { "cwd": module_dir_path });
         if (!watch) {
             return pr;
