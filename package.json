@@ -20,7 +20,6 @@
     "lessify": "^1.0.2",
     "node-watch": "^0.5.9",
     "scripting-tools": "github:garronej/scripting-tools",
-    "ts-events-extended": "github:garronej/ts-events-extended",
     "uglify-js": "^3.4.9",
     "watchify": "^3.11.0"
   },
