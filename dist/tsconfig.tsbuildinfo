@@ -1,132 +1,162 @@
 {
   "program": {
     "fileInfos": {
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es6.d.ts": {
-        "version": "c180f01a2aaac7d733001fa1db20f881dc83cf33096b674a1546ca26762e69da",
-        "signature": "c180f01a2aaac7d733001fa1db20f881dc83cf33096b674a1546ca26762e69da"
+      "../node_modules/typescript/lib/lib.es6.d.ts": {
+        "version": "721cec59c3fef87aaf480047d821fb758b3ec9482c4129a54631e6e25e432a31",
+        "signature": "721cec59c3fef87aaf480047d821fb758b3ec9482c4129a54631e6e25e432a31",
+        "affectsGlobalScope": false
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es5.d.ts": {
-        "version": "1f753cee573dea40df8a9dc873fef5566957b19ad513874f6643d8dfb14842d0",
-        "signature": "1f753cee573dea40df8a9dc873fef5566957b19ad513874f6643d8dfb14842d0"
+      "../node_modules/typescript/lib/lib.es5.d.ts": {
+        "version": "70ae6416528e68c2ee7b62892200d2ca631759943d4429f8b779b947ff1e124d",
+        "signature": "70ae6416528e68c2ee7b62892200d2ca631759943d4429f8b779b947ff1e124d",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.d.ts": {
-        "version": "7994d44005046d1413ea31d046577cdda33b8b2470f30281fd9c8b3c99fe2d96",
-        "signature": "7994d44005046d1413ea31d046577cdda33b8b2470f30281fd9c8b3c99fe2d96"
+      "../node_modules/typescript/lib/lib.es2015.d.ts": {
+        "version": "dc47c4fa66b9b9890cf076304de2a9c5201e94b740cffdf09f87296d877d71f6",
+        "signature": "dc47c4fa66b9b9890cf076304de2a9c5201e94b740cffdf09f87296d877d71f6",
+        "affectsGlobalScope": false
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2016.d.ts": {
-        "version": "5f217838d25704474d9ef93774f04164889169ca31475fe423a9de6758f058d1",
-        "signature": "5f217838d25704474d9ef93774f04164889169ca31475fe423a9de6758f058d1"
+      "../node_modules/typescript/lib/lib.es2016.d.ts": {
+        "version": "7a387c58583dfca701b6c85e0adaf43fb17d590fb16d5b2dc0a2fbd89f35c467",
+        "signature": "7a387c58583dfca701b6c85e0adaf43fb17d590fb16d5b2dc0a2fbd89f35c467",
+        "affectsGlobalScope": false
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.d.ts": {
-        "version": "459097c7bdd88fc5731367e56591e4f465f2c9de81a35427a7bd473165c34743",
-        "signature": "459097c7bdd88fc5731367e56591e4f465f2c9de81a35427a7bd473165c34743"
+      "../node_modules/typescript/lib/lib.es2017.d.ts": {
+        "version": "8a12173c586e95f4433e0c6dc446bc88346be73ffe9ca6eec7aa63c8f3dca7f9",
+        "signature": "8a12173c586e95f4433e0c6dc446bc88346be73ffe9ca6eec7aa63c8f3dca7f9",
+        "affectsGlobalScope": false
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.dom.d.ts": {
-        "version": "973df4e41aea3780ce77073777d37dd5896f684124f4c42409f3a832133837a4",
-        "signature": "973df4e41aea3780ce77073777d37dd5896f684124f4c42409f3a832133837a4"
+      "../node_modules/typescript/lib/lib.dom.d.ts": {
+        "version": "9affb0a2ddc57df5b8174c0af96c288d697a262e5bc9ca1f544c999dc64a91e6",
+        "signature": "9affb0a2ddc57df5b8174c0af96c288d697a262e5bc9ca1f544c999dc64a91e6",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.dom.iterable.d.ts": {
-        "version": "eb843da29336c7d5840bb439b24cf68a4a1652fd01c6e4e66ec74d8b136e944a",
-        "signature": "eb843da29336c7d5840bb439b24cf68a4a1652fd01c6e4e66ec74d8b136e944a"
+      "../node_modules/typescript/lib/lib.dom.iterable.d.ts": {
+        "version": "fb0c09b697dc42afa84d1587e3c994a2f554d2a45635e4f0618768d16a86b69a",
+        "signature": "fb0c09b697dc42afa84d1587e3c994a2f554d2a45635e4f0618768d16a86b69a",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.webworker.importscripts.d.ts": {
-        "version": "fe4e59403e34c7ff747abe4ff6abbc7718229556d7c1a5b93473fb53156c913b",
-        "signature": "fe4e59403e34c7ff747abe4ff6abbc7718229556d7c1a5b93473fb53156c913b"
+      "../node_modules/typescript/lib/lib.webworker.importscripts.d.ts": {
+        "version": "7fac8cb5fc820bc2a59ae11ef1c5b38d3832c6d0dfaec5acdb5569137d09a481",
+        "signature": "7fac8cb5fc820bc2a59ae11ef1c5b38d3832c6d0dfaec5acdb5569137d09a481",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.scripthost.d.ts": {
-        "version": "b9faa17292f17d2ad75e34fac77dd63a6403af1dba02d39cd0cbb9ffdf3de8b9",
-        "signature": "b9faa17292f17d2ad75e34fac77dd63a6403af1dba02d39cd0cbb9ffdf3de8b9"
+      "../node_modules/typescript/lib/lib.scripthost.d.ts": {
+        "version": "097a57355ded99c68e6df1b738990448e0bf170e606707df5a7c0481ff2427cd",
+        "signature": "097a57355ded99c68e6df1b738990448e0bf170e606707df5a7c0481ff2427cd",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.core.d.ts": {
-        "version": "2a0390a665763bcc90f0670e43c587928d8fefe2a94a11209c1e22cba7b09f52",
-        "signature": "2a0390a665763bcc90f0670e43c587928d8fefe2a94a11209c1e22cba7b09f52"
+      "../node_modules/typescript/lib/lib.es2015.core.d.ts": {
+        "version": "63e0cc12d0f77394094bd19e84464f9840af0071e5b9358ced30511efef1d8d2",
+        "signature": "63e0cc12d0f77394094bd19e84464f9840af0071e5b9358ced30511efef1d8d2",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.collection.d.ts": {
-        "version": "dd94d8ef48c562389eb58af8df3a3a34d11367f7c818192aa5f16470d469e3f0",
-        "signature": "dd94d8ef48c562389eb58af8df3a3a34d11367f7c818192aa5f16470d469e3f0"
+      "../node_modules/typescript/lib/lib.es2015.collection.d.ts": {
+        "version": "43fb1d932e4966a39a41b464a12a81899d9ae5f2c829063f5571b6b87e6d2f9c",
+        "signature": "43fb1d932e4966a39a41b464a12a81899d9ae5f2c829063f5571b6b87e6d2f9c",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.generator.d.ts": {
-        "version": "828413486bdcaa342558e8e4570b1b287b776cb61b4b70b0214bd10c5d9a94c3",
-        "signature": "828413486bdcaa342558e8e4570b1b287b776cb61b4b70b0214bd10c5d9a94c3"
+      "../node_modules/typescript/lib/lib.es2015.generator.d.ts": {
+        "version": "cdccba9a388c2ee3fd6ad4018c640a471a6c060e96f1232062223063b0a5ac6a",
+        "signature": "cdccba9a388c2ee3fd6ad4018c640a471a6c060e96f1232062223063b0a5ac6a",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.iterable.d.ts": {
-        "version": "6c9f73334f8bf47aea685ca5b46a8f7e992a223e96fbceb030f26a4d2324ba21",
-        "signature": "6c9f73334f8bf47aea685ca5b46a8f7e992a223e96fbceb030f26a4d2324ba21"
+      "../node_modules/typescript/lib/lib.es2015.iterable.d.ts": {
+        "version": "42f5e41e5893da663dbf0394268f54f1da4b43dc0ddd2ea4bf471fe5361d6faf",
+        "signature": "42f5e41e5893da663dbf0394268f54f1da4b43dc0ddd2ea4bf471fe5361d6faf",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.promise.d.ts": {
-        "version": "e6b8ff2798f8ebd7a1c7afd8671f2cb67ee1901c422f5964d74b0b34c6574ea2",
-        "signature": "e6b8ff2798f8ebd7a1c7afd8671f2cb67ee1901c422f5964d74b0b34c6574ea2"
+      "../node_modules/typescript/lib/lib.es2015.promise.d.ts": {
+        "version": "0b7a905675e6cb4211c128f0a3aa47d414b275180a299a9aad5d3ec298abbfc4",
+        "signature": "0b7a905675e6cb4211c128f0a3aa47d414b275180a299a9aad5d3ec298abbfc4",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.proxy.d.ts": {
-        "version": "5e72f949a89717db444e3bd9433468890068bb21a5638d8ab15a1359e05e54fe",
-        "signature": "5e72f949a89717db444e3bd9433468890068bb21a5638d8ab15a1359e05e54fe"
+      "../node_modules/typescript/lib/lib.es2015.proxy.d.ts": {
+        "version": "dfff68b3c34338f6b307a25d4566de15eed7973b0dc5d69f9fde2bcac1c25315",
+        "signature": "dfff68b3c34338f6b307a25d4566de15eed7973b0dc5d69f9fde2bcac1c25315",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.reflect.d.ts": {
-        "version": "f5b242136ae9bfb1cc99a5971cccc44e99947ae6b5ef6fd8aa54b5ade553b976",
-        "signature": "f5b242136ae9bfb1cc99a5971cccc44e99947ae6b5ef6fd8aa54b5ade553b976"
+      "../node_modules/typescript/lib/lib.es2015.reflect.d.ts": {
+        "version": "cb609802a8698aa28b9c56331d4b53f590ca3c1c3a255350304ae3d06017779d",
+        "signature": "cb609802a8698aa28b9c56331d4b53f590ca3c1c3a255350304ae3d06017779d",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.symbol.d.ts": {
-        "version": "9ae2860252d6b5f16e2026d8a2c2069db7b2a3295e98b6031d01337b96437230",
-        "signature": "9ae2860252d6b5f16e2026d8a2c2069db7b2a3295e98b6031d01337b96437230"
+      "../node_modules/typescript/lib/lib.es2015.symbol.d.ts": {
+        "version": "3013574108c36fd3aaca79764002b3717da09725a36a6fc02eac386593110f93",
+        "signature": "3013574108c36fd3aaca79764002b3717da09725a36a6fc02eac386593110f93",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": {
-        "version": "3e0a459888f32b42138d5a39f706ff2d55d500ab1031e0988b5568b0f67c2303",
-        "signature": "3e0a459888f32b42138d5a39f706ff2d55d500ab1031e0988b5568b0f67c2303"
+      "../node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": {
+        "version": "4670208dd7da9d6c774ab1b75c1527a810388c7989c4905de6aaea8561cb9dce",
+        "signature": "4670208dd7da9d6c774ab1b75c1527a810388c7989c4905de6aaea8561cb9dce",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2016.array.include.d.ts": {
-        "version": "3f96f1e570aedbd97bf818c246727151e873125d0512e4ae904330286c721bc0",
-        "signature": "3f96f1e570aedbd97bf818c246727151e873125d0512e4ae904330286c721bc0"
+      "../node_modules/typescript/lib/lib.es2016.array.include.d.ts": {
+        "version": "3be5a1453daa63e031d266bf342f3943603873d890ab8b9ada95e22389389006",
+        "signature": "3be5a1453daa63e031d266bf342f3943603873d890ab8b9ada95e22389389006",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.object.d.ts": {
-        "version": "ff8ad203e83338289b0f5defc1a5b5c253fb7d251b464db497383f915a0df3f4",
-        "signature": "ff8ad203e83338289b0f5defc1a5b5c253fb7d251b464db497383f915a0df3f4"
+      "../node_modules/typescript/lib/lib.es2017.object.d.ts": {
+        "version": "17bb1fc99591b00515502d264fa55dc8370c45c5298f4a5c2083557dccba5a2a",
+        "signature": "17bb1fc99591b00515502d264fa55dc8370c45c5298f4a5c2083557dccba5a2a",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": {
-        "version": "b8667586a618c5cf64523d4e500ae39e781428abfb28f3de441fc66b56144b6f",
-        "signature": "b8667586a618c5cf64523d4e500ae39e781428abfb28f3de441fc66b56144b6f"
+      "../node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": {
+        "version": "d0db416bccdb33975548baf09a42ee8c47eace1aac7907351a000f1e568e7232",
+        "signature": "d0db416bccdb33975548baf09a42ee8c47eace1aac7907351a000f1e568e7232",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.string.d.ts": {
-        "version": "21df2e0059f14dcb4c3a0e125859f6b6ff01332ee24b0065a741d121250bc71c",
-        "signature": "21df2e0059f14dcb4c3a0e125859f6b6ff01332ee24b0065a741d121250bc71c"
+      "../node_modules/typescript/lib/lib.es2017.string.d.ts": {
+        "version": "6a6b173e739a6a99629a8594bfb294cc7329bfb7b227f12e1f7c11bc163b8577",
+        "signature": "6a6b173e739a6a99629a8594bfb294cc7329bfb7b227f12e1f7c11bc163b8577",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.intl.d.ts": {
-        "version": "c1759cb171c7619af0d2234f2f8fb2a871ee88e956e2ed91bb61778e41f272c6",
-        "signature": "c1759cb171c7619af0d2234f2f8fb2a871ee88e956e2ed91bb61778e41f272c6"
+      "../node_modules/typescript/lib/lib.es2017.intl.d.ts": {
+        "version": "12a310447c5d23c7d0d5ca2af606e3bd08afda69100166730ab92c62999ebb9d",
+        "signature": "12a310447c5d23c7d0d5ca2af606e3bd08afda69100166730ab92c62999ebb9d",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": {
-        "version": "28569d59e07d4378cb3d54979c4c60f9f06305c9bb6999ffe6cab758957adc46",
-        "signature": "28569d59e07d4378cb3d54979c4c60f9f06305c9bb6999ffe6cab758957adc46"
+      "../node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": {
+        "version": "b0124885ef82641903d232172577f2ceb5d3e60aed4da1153bab4221e1f6dd4e",
+        "signature": "b0124885ef82641903d232172577f2ceb5d3e60aed4da1153bab4221e1f6dd4e",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/@types/node/inspector.d.ts": {
+      "../node_modules/@types/node/inspector.d.ts": {
         "version": "7e49dbf1543b3ee54853ade4c5e9fa460b6a4eca967efe6bf943e0c505d087ed",
-        "signature": "7e49dbf1543b3ee54853ade4c5e9fa460b6a4eca967efe6bf943e0c505d087ed"
+        "signature": "7e49dbf1543b3ee54853ade4c5e9fa460b6a4eca967efe6bf943e0c505d087ed",
+        "affectsGlobalScope": false
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts": {
-        "version": "c9142f7c8f045a6c9eb7b612cfc9e7ccc50ae7ef00ebb0944c2fff812bc0a8ff",
-        "signature": "c9142f7c8f045a6c9eb7b612cfc9e7ccc50ae7ef00ebb0944c2fff812bc0a8ff"
+      "../node_modules/@types/node/base.d.ts": {
+        "version": "55b94397e95c26d9ffd9739c092fcd7b3a319f07dfb4a44f3d5945cb4f690e7f",
+        "signature": "55b94397e95c26d9ffd9739c092fcd7b3a319f07dfb4a44f3d5945cb4f690e7f",
+        "affectsGlobalScope": true
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts": {
+      "../node_modules/@types/node/ts3.2/index.d.ts": {
         "version": "1de0ff6200b92798a5aef43f57029c79dbf69932037dee1c007fdd2c562db258",
-        "signature": "1de0ff6200b92798a5aef43f57029c79dbf69932037dee1c007fdd2c562db258"
+        "signature": "1de0ff6200b92798a5aef43f57029c79dbf69932037dee1c007fdd2c562db258",
+        "affectsGlobalScope": false
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/scripting-tools/dist/lib/get_caller_file_path.d.ts": {
+      "../node_modules/scripting-tools/dist/lib/get_caller_file_path.d.ts": {
         "version": "e64648c5d646fde7e056578ade957887b730713df1723afdfb40a4ddcf235f8c",
-        "signature": "e64648c5d646fde7e056578ade957887b730713df1723afdfb40a4ddcf235f8c"
+        "signature": "e64648c5d646fde7e056578ade957887b730713df1723afdfb40a4ddcf235f8c",
+        "affectsGlobalScope": false
       },
-      "/users/joseph/github/frontend-build-tools/node_modules/scripting-tools/dist/lib/index.d.ts": {
+      "../node_modules/scripting-tools/dist/lib/index.d.ts": {
         "version": "dc50fd008223d44fc750cff976056781a0844c58a581ae48fac5f3793c5ca4e5",
-        "signature": "dc50fd008223d44fc750cff976056781a0844c58a581ae48fac5f3793c5ca4e5"
+        "signature": "dc50fd008223d44fc750cff976056781a0844c58a581ae48fac5f3793c5ca4e5",
+        "affectsGlobalScope": false
       },
-      "/users/joseph/github/frontend-build-tools/src/index.ts": {
+      "../src/index.ts": {
         "version": "23235b6ab56825d276db7aea396445390b7b714a76ca3e255dff701f227ebed3",
-        "signature": "b838169c844f89586861646be93ef84805ab0a48bbcc5e85e65628f1a4865be8"
+        "signature": "b838169c844f89586861646be93ef84805ab0a48bbcc5e85e65628f1a4865be8",
+        "affectsGlobalScope": false
       }
     },
     "options": {
       "module": 1,
       "target": 2,
       "declaration": true,
-      "outDir": "/Users/joseph/github/frontend-build-tools/dist",
+      "outDir": "./",
       "strictNullChecks": true,
       "sourceMap": false,
       "newLine": 1,
@@ -135,284 +165,283 @@
       "strictPropertyInitialization": true,
       "strictFunctionTypes": true,
       "incremental": true,
-      "project": "./tsconfig.json",
-      "configFilePath": "/Users/joseph/github/frontend-build-tools/tsconfig.json"
+      "configFilePath": "../tsconfig.json"
     },
     "referencedMap": {
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es6.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/@types/node/base.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/inspector.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es5.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/@types/node/inspector.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/@types/node/ts3.2/index.d.ts": [
+        "../node_modules/@types/node/base.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2016.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/scripting-tools/dist/lib/get_caller_file_path.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/scripting-tools/dist/lib/index.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/scripting-tools/dist/lib/get_caller_file_path.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.dom.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.dom.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.dom.iterable.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.dom.iterable.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.webworker.importscripts.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.collection.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.scripthost.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.core.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.core.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.collection.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.generator.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.generator.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.iterable.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.iterable.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.promise.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.promise.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.proxy.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.proxy.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.reflect.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.reflect.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.symbol.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.symbol.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2016.array.include.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2016.array.include.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2016.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.object.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2017.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2017.intl.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.string.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2017.object.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.intl.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2017.string.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/@types/node/inspector.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/inspector.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es5.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts"
+      "../node_modules/typescript/lib/lib.es6.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/scripting-tools/dist/lib/get_caller_file_path.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.scripthost.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/scripting-tools/dist/lib/index.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/scripting-tools/dist/lib/get_caller_file_path.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.webworker.importscripts.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/src/index.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/scripting-tools/dist/lib/index.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../src/index.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/scripting-tools/dist/lib/index.d.ts"
       ]
     },
     "exportedModulesMap": {
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es6.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/@types/node/base.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/inspector.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es5.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/@types/node/inspector.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/@types/node/ts3.2/index.d.ts": [
+        "../node_modules/@types/node/base.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2016.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/scripting-tools/dist/lib/get_caller_file_path.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/scripting-tools/dist/lib/index.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts",
+        "../node_modules/scripting-tools/dist/lib/get_caller_file_path.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.dom.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.dom.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.dom.iterable.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.dom.iterable.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.webworker.importscripts.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.collection.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.scripthost.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.core.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.core.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.collection.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.generator.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.generator.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.iterable.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.iterable.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.promise.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.promise.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.proxy.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.proxy.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.reflect.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.reflect.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.symbol.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.symbol.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2016.array.include.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2016.array.include.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2016.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.object.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2017.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2017.intl.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.string.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2017.object.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.intl.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2017.string.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/@types/node/inspector.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es2017.typedarrays.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/inspector.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es5.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/scripting-tools/dist/lib/index.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/scripting-tools/dist/lib/get_caller_file_path.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.es6.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/scripting-tools/dist/lib/get_caller_file_path.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts"
+      "../node_modules/typescript/lib/lib.scripthost.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ],
-      "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts": [
-        "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts"
+      "../node_modules/typescript/lib/lib.webworker.importscripts.d.ts": [
+        "../node_modules/@types/node/base.d.ts",
+        "../node_modules/@types/node/ts3.2/index.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es6.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es5.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2016.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.dom.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.dom.iterable.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.scripthost.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.core.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.collection.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.generator.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.iterable.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.promise.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.proxy.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.reflect.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.symbol.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2016.array.include.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.object.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.string.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.intl.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/typescript/lib/lib.es2017.typedarrays.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/@types/node/inspector.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/@types/node/base.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/@types/node/ts3.2/index.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/scripting-tools/dist/lib/get_caller_file_path.d.ts",
-      "/users/joseph/github/frontend-build-tools/node_modules/scripting-tools/dist/lib/index.d.ts",
-      "/users/joseph/github/frontend-build-tools/src/index.ts"
+      "../node_modules/@types/node/base.d.ts",
+      "../node_modules/@types/node/inspector.d.ts",
+      "../node_modules/@types/node/ts3.2/index.d.ts",
+      "../node_modules/scripting-tools/dist/lib/get_caller_file_path.d.ts",
+      "../node_modules/scripting-tools/dist/lib/index.d.ts",
+      "../node_modules/typescript/lib/lib.dom.d.ts",
+      "../node_modules/typescript/lib/lib.dom.iterable.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.collection.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.core.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.generator.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.iterable.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.promise.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.proxy.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.reflect.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.symbol.d.ts",
+      "../node_modules/typescript/lib/lib.es2015.symbol.wellknown.d.ts",
+      "../node_modules/typescript/lib/lib.es2016.array.include.d.ts",
+      "../node_modules/typescript/lib/lib.es2016.d.ts",
+      "../node_modules/typescript/lib/lib.es2017.d.ts",
+      "../node_modules/typescript/lib/lib.es2017.intl.d.ts",
+      "../node_modules/typescript/lib/lib.es2017.object.d.ts",
+      "../node_modules/typescript/lib/lib.es2017.sharedmemory.d.ts",
+      "../node_modules/typescript/lib/lib.es2017.string.d.ts",
+      "../node_modules/typescript/lib/lib.es2017.typedarrays.d.ts",
+      "../node_modules/typescript/lib/lib.es5.d.ts",
+      "../node_modules/typescript/lib/lib.es6.d.ts",
+      "../node_modules/typescript/lib/lib.scripthost.d.ts",
+      "../node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
+      "../src/index.ts"
     ]
   },
-  "version": "3.5.1"
+  "version": "3.9.7"
 }
